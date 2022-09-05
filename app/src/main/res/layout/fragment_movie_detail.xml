@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.moviedetails.MovieDetailFragment">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_background"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient" />
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="120dp"
+        android:layout_height="170dp"
+        android:clipToPadding="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline">
+        <ImageView
+            android:id="@+id/img_movie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="333dp" />
+
+    <TextView
+        android:id="@+id/txt_movie_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Titulo pelicula"/>
+    <TextView
+        android:id="@+id/txt_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        app:drawableStartCompat = "@drawable/ic_baseline_star_border_24"
+        app:drawableTint = "@color/white"
+        android:drawablePadding="8dp"
+        tools:text="8.5 (1000 Reviews)"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView"/>
+    <TextView
+        android:id="@+id/txt_released"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        app:drawableStartCompat = "@drawable/ic_baseline_calendar_today_24"
+        app:drawableTint = "@color/white"
+        tools:text="Estrenado 01/08/2022"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_rating"/>
+    <TextView
+        android:id="@+id/txt_lenguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        app:drawableStartCompat = "@drawable/ic_baseline_language_24"
+        app:drawableTint = "@color/white"
+        tools:text="Idioma ES"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_released"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutBoomark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        app:layout_goneMarginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_bookmark_border_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bookmark"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        app:layout_goneMarginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/linearLayoutBoomark"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_favorite_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Me gusta"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        app:layout_goneMarginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/linearLayoutLike"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_share_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Compartir"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Descripción"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"/>
+
+    <TextView
+        android:id="@+id/txt_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_label"
+        tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+        />
+
+    <Button
+        android:id="@+id/btnMapa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ver cine más cercano"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_description"
+        app:layout_constraintStart_toStartOf="@+id/txt_description"
+        app:layout_constraintTop_toBottomOf="@+id/txt_description" />
+
+    <Button
+        android:id="@+id/btnEntrada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Comprar entradas"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_description"
+        app:layout_constraintStart_toStartOf="@+id/txt_description"
+        app:layout_constraintTop_toBottomOf="@+id/btnMapa"  />
+</androidx.constraintlayout.widget.ConstraintLayout>
